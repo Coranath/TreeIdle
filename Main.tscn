@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm0asnxy4md3h"]
+
+[ext_resource type="Script" path="res://tree.gd" id="2_5ok15"]
+
+[node name="Main" type="CanvasLayer"]
+
+[node name="Tree" type="Node2D" parent="."]
+script = ExtResource("2_5ok15")

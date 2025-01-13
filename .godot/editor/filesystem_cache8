@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1736782096
+branch.gd::GDScript::-1::1736748621::0::1::::<>Node2D<>::
+branch.tscn::PackedScene::630396191648875140::1736748622::0::1::::<><>::uid://b64wy4ctd2ydt::::res://assets/whiteBox.png<>res://branch.gd
+globals.gd::GDScript::-1::1736748119::0::1::::<>Node<>::
+icon.svg::CompressedTexture2D::7174191502531060078::1735573192::1735573198::1::::<><>::
+Main.tscn::PackedScene::5666749798648106683::1736748622::0::1::::<><>::res://tree.gd
+root.gd::GDScript::-1::1736748572::0::1::::Root<>Node2D<>::
+root.tscn::PackedScene::4160420006810274897::1736748622::0::1::::<><>::res://root.gd<>uid://b64wy4ctd2ydt::::res://assets/whiteBox.png
+tree.gd::GDScript::-1::1736747776::0::1::::<>Node2D<>::
+::res://assets/::1735685013
+whiteBox.png::CompressedTexture2D::4623521951369552321::1735685004::1735685013::1::::<><>::
