@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Globals="*res://globals.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/ASRock_PC/Documents/treeidle/Movie.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
