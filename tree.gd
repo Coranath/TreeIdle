@@ -34,6 +34,7 @@ class Branch extends Node2D:
 		line = Line2D.new()
 		line.width = 10
 		line.add_point(root)
+		line.begin_cap_mode = Line2D.LINE_CAP_ROUND
 		
 		line.width_curve = Curve.new()
 		line.width_curve.add_point(Vector2(0, copyMWC.sample(totalLength)))
