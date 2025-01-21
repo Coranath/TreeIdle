@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm0asnxy4md3h"]
+[gd_scene load_steps=2 format=3 uid="uid://dmdcjt51cl3ls"]
 
-[ext_resource type="Script" path="res://tree.gd" id="2_5ok15"]
+[ext_resource type="PackedScene" uid="uid://cm0asnxy4md3h" path="res://Level1.tscn" id="1_1h460"]
 
-[node name="Main" type="CanvasLayer"]
+[node name="Main" type="Node"]
 
-[node name="Tree" type="Node2D" parent="."]
-script = ExtResource("2_5ok15")
+[node name="Level1" parent="." instance=ExtResource("1_1h460")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "TreeOne"
+
+[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "TreeTwo"

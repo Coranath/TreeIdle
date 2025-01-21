@@ -1,11 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1737127708
+::res://::1737489831
 branch.gd::GDScript::-1::1736786691::0::1::::<>Node2D<>::
 branch.tscn::PackedScene::630396191648875140::1737000458::0::1::::<><>::uid://b64wy4ctd2ydt::::res://assets/whiteBox.png<>res://branch.gd
 globals.gd::GDScript::-1::1737003335::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::7174191502531060078::1735573192::1735573198::1::::<><>::
-Main.tscn::PackedScene::5666749798648106683::1737089142::0::1::::<><>::res://tree.gd
-tree.gd::GDScript::-1::1737089142::0::1::::<>Node2D<>::
+Level1.tscn::PackedScene::5666749798648106683::1737425909::0::1::::<><>::res://tree.gd<>res://main_camera_body.gd
+main.tscn::PackedScene::8007859859600792112::1737425910::0::1::::<><>::uid://cm0asnxy4md3h::::res://Level1.tscn
+main_camera_body.gd::GDScript::-1::1737182955::0::1::::<>CharacterBody2D<>::
+tree.gd::GDScript::-1::1737170666::0::1::::<>Node2D<>::
 ::res://addons/::1736786364
 ::res://addons/debug_menu/::1736786364
 debug_menu.gd::GDScript::-1::1736786364::0::1::::<>CanvasLayer<>::

@@ -20,10 +20,11 @@ class Branch extends Node2D:
 	var copyMWC: Curve
 
 
-	""" Need to have end of branches be set to equal their length as a
-		percentage of the master width, that way the trunk will continue
-		to grow in synce as it will be 1/3 the way down the curve then
-		as the tree grow, 1/5 the way day and so on!
+	""" 
+	Need to have end of branches be set to equal their length as a
+	percentage of the master width, that way the trunk will continue
+	to grow in synce as it will be 1/3 the way down the curve then
+	as the tree grow, 1/5 the way day and so on!
 	"""
 	
 	func initialize(rootP: Vector2, masterWidthCurve: Curve, angleP = -PI/2, totalLengthP = 0): 
@@ -86,7 +87,7 @@ func _ready() -> void:
 func _on_growTimer_timeout() -> void:
 	if len(branches) <= Globals.MaxNumberOfBranches:
 		masterLength += 0.0001
-		masterWidth += 0.001
+		masterWidth += 0.005
 		masterWidthCurve.set_point_value(0, masterWidth)
 		masterWidthCurve.remove_point(1)
 		masterWidthCurve.add_point(Vector2(masterLength,0.1))
