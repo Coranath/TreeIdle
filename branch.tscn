@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://i8msel5f4vds"]
-
-[ext_resource type="Texture2D" uid="uid://b64wy4ctd2ydt" path="res://assets/whiteBox.png" id="1_63vd0"]
-[ext_resource type="Script" path="res://branch.gd" id="1_xaako"]
-
-[node name="Branch" type="Sprite2D" groups=["branches"]]
-texture = ExtResource("1_63vd0")
-script = ExtResource("1_xaako")

@@ -1,2 +1,6 @@
-res://main.tscn
 res://Level1.tscn
+res://main.tscn
+res://globals.gd
+res://branch.gd
+res://tree.gd
+res://branch.tscn

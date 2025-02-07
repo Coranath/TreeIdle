@@ -3,7 +3,7 @@ extends Node
 const NewBranchMinAngle = 60
 const NewBranchMaxAngle = 120
 const TotalBranchChance = 10000
-const SingleBranchChance = 9990 # Out of 1000
+const SingleBranchChance = 9990 # Out of 10000 to just grow straight
 const DoubleBranchChance = 9995
 const TripleBranchChance = 10000 
 # Confusing as this looks, check sprout function in root, to see how it works.

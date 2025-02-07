@@ -18,8 +18,8 @@ class Branch extends Node2D:
 	var sproutLikelihood = 0
 	var width = 0.1
 	var copyMWC: Curve
-
-
+	
+	
 	""" 
 	Need to have end of branches be set to equal their length as a
 	percentage of the master width, that way the trunk will continue
