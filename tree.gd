@@ -2,6 +2,7 @@ extends Node2D
 
 #var root = preload("res://branch.tscn")
 var branches = []
+var roots = []
 var oldGrowth = []
 var masterWidthCurve = Curve.new()
 var masterWidth = 0.2
@@ -18,7 +19,6 @@ class Branch extends Node2D:
 	var sproutLikelihood = 0
 	var width = 0.1
 	var copyMWC: Curve
-	
 	
 	""" 
 	Need to have end of branches be set to equal their length as a
@@ -72,6 +72,11 @@ func _ready() -> void:
 	add_child(branch.line)
 	branches.push_back(branch)
 	
+	var root = Branch.new()
+	root.initialize(Vector2(550, 600), masterWidthCurve, PI/2)
+	add_child(root.line)
+	roots.push_back(root)
+	
 	var growTimer = Timer.new()
 	growTimer.wait_time = Globals.GrowDelay
 	growTimer.timeout.connect(_on_growTimer_timeout)
@@ -93,26 +98,40 @@ func _on_growTimer_timeout() -> void:
 		masterWidthCurve.add_point(Vector2(masterLength,0.1))
 		#print("second point = ", masterWidthCurve.get_point_position(1))
 		#print("master length = ", masterLength)
-		
+		var chance = 0
 		for branch in branches:
-			var chance = randi_range(0,Globals.TotalBranchChance) # Chance for ranches to sprout
+			chance = randi_range(0,Globals.TotalBranchChance) # Chance for ranches to sprout
 			match chance:
 				_ when chance < Globals.SingleBranchChance - branch.sproutLikelihood:
 					branch.grow()
-				_ when Globals.SingleBranchChance - branch.sproutLikelihood <= chance and chance < Globals.DoubleBranchChance + branch.sproutLikelihood:
+				_ when Globals.SingleBranchChance - branch.sproutLikelihood <= chance and chance < Globals.DoubleBranchChance:
 					print("sprouting 2")
 					new_branch(2, branch)
 				_ when Globals.DoubleBranchChance <= chance:
 					print("sprouting 3")
 					new_branch(3, branch)
+		for root in roots:
+			chance = randi_range(0,Globals.TotalBranchChance)
+			match chance:
+				_ when chance < Globals.SingleBranchChance - root.sproutLikelihood - 10:
+					root.grow()
+				_ when Globals.SingleBranchChance - root.sproutLikelihood-10 <= chance and chance < Globals.DoubleBranchChance-10:
+					print("sprouting 2")
+					new_branch(2, root, true)
+				_ when Globals.DoubleBranchChance-10 <= chance:
+					print("sprouting 3")
+					new_branch(3, root, true)
 		for wood in oldGrowth:
 			wood.increase_girth()
 			
 	return
 
-func new_branch(number, root) -> void:
+func new_branch(number, root, isRoot: bool = false) -> void:
 	root.growing = false
-	branches.remove_at(branches.find(root))
+	if isRoot:
+		roots.remove_at(roots.find(root))
+	else:
+		branches.remove_at(branches.find(root))
 	oldGrowth.push_back(root)
 	for i in number:
 		var branch = Branch.new()
@@ -121,6 +140,9 @@ func new_branch(number, root) -> void:
 
 		branch.initialize(branch.root, masterWidthCurve, branch.angle, root.length+root.totalLength)
 		add_child(branch.line)
-		branches.push_back(branch)
+		if isRoot:
+			roots.push_back(branch)
+		else:
+			branches.push_back(branch)
 		
 	return
