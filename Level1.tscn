@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm0asnxy4md3h"]
+
+[ext_resource type="Script" path="res://tree.gd" id="2_5ok15"]
+[ext_resource type="Script" path="res://main_camera_body.gd" id="2_y8nal"]
+
+[node name="Level1" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Dirt" type="ColorRect" parent="."]
+offset_left = -704.0
+offset_top = 576.0
+offset_right = 1856.0
+offset_bottom = 1392.0
+color = Color(0.196078, 0.0980392, 0, 1)
+
+[node name="Grass" type="ColorRect" parent="."]
+offset_left = -704.0
+offset_top = 576.0
+offset_right = 1856.0
+offset_bottom = 616.0
+color = Color(0.0784314, 0.392157, 0, 1)
+
+[node name="Tree" type="Node2D" parent="."]
+script = ExtResource("2_5ok15")
+
+[node name="MainCameraBody" type="CharacterBody2D" parent="."]
+script = ExtResource("2_y8nal")
+
+[node name="Camera2D" type="Camera2D" parent="MainCameraBody"]
+position = Vector2(576, 320)
+zoom = Vector2(0.75, 0.75)
+editor_draw_limits = true
