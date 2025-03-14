@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm0asnxy4md3h"]
 
-[ext_resource type="Script" path="res://tree.gd" id="2_5ok15"]
-[ext_resource type="Script" path="res://main_camera_body.gd" id="2_y8nal"]
+[ext_resource type="Script" uid="uid://2ghvk58dat5s" path="res://tree.gd" id="2_5ok15"]
+[ext_resource type="Script" uid="uid://dn8dds6pvsfbm" path="res://main_camera_body.gd" id="2_y8nal"]
 
 [node name="Level1" type="CanvasLayer"]
 follow_viewport_enabled = true
